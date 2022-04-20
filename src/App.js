@@ -1,24 +1,15 @@
+import React from 'react';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World !</h1>
-      <p>this text is for test</p>
-      <div id="content">{getCar(car)}</div>
+    <div className='App'>
+      <h1>test header</h1>
+      <p>this is a test ! just it</p>
     </div>
   );
 }
 
-const car = {
-  name: "Ford",
-  model: "Mustang",
-  year: 2014
-};
-
-function getCar({name, model, year}){
-  return name + " / " + model + " / " + year;
-}
 
 export default App;
 
