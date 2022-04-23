@@ -1,0 +1,33 @@
+.product {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(143, 143, 143);
+    margin: 1.4rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.6rem;
+}
+
+.title {
+    font-size: 2rem;
+}
+
+.btn {
+    font-size: 1.4rem;
+    padding: 0.3rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgb(166, 166, 166);
+    color: whitesmoke;
+}
+
+.btn:hover {
+    color: greenyellow;
+}
+
+.btn:active {
+    background-color: green;
+}
