@@ -1,8 +1,13 @@
-import Product from "./component/Product";
+import Product from "./components/Product";
 
 function App(){
     return (
-        <div id="app" className="container"><Product/></div>
+        <div className="container">
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+        </div>
     )
 }
 
