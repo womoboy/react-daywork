@@ -4,7 +4,7 @@ function Product(probs){
     return (
         <div className="product">
             <p>{probs.title}</p>
-            <button>Click</button>
+            <button>ClickMe</button>
         </div>
     )
 }
