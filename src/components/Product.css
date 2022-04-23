@@ -1,19 +1,19 @@
 .product {
+    background-color: whitesmoke;
+    color: black;
     width: 200px;
     height: 200px;
     margin: 1.5rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+    font-size: 25px;
     border-radius: 1rem;
-    background-color: #e0e0e0;
-    color: #212121;
-    flex-direction: column;
 }
 
 button {
-    font-size: 20px;
+    margin: 1rem;
+    font-size: 18px;
     padding: 5px;
-    margin: 5px;
 }

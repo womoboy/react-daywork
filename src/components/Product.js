@@ -1,9 +1,9 @@
 import './Product.css';
 
-function Product(){
+function Product(probs){
     return (
-        <div className='product'>
-            <p>Hello World !</p>
+        <div className="product">
+            <p>{probs.title}</p>
             <button>Click</button>
         </div>
     )
