@@ -1,14 +1,11 @@
-const products = [
-    {id: 1, title: "Book 1"},
-    {id: 2, title: "Book 2"},
-    {id: 3, title: "Book 3"}
-];
+import Product from "../product/Product";
+import './ProductList.css';
 
-const ProductList = () => {
+const ProductList = ({products, onDelete}) => {
     return (
-        <div>
+        <div className="product-list">
             {products.map((item)=>{
-                return <p key={item.id}>{item.title}</p>
+                return <Product key={item.id} product={item} onDelete={onDelete}/>;
             })}
         </div>
     )

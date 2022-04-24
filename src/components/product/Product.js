@@ -1,15 +1,11 @@
 
 import './Product.css';
 
-const Product = ({title}) => {
-    const showTitle = () => {
-        console.log(title);
-    }
-
+const Product = ({product, onDelete}) => {
     return (
         <div className='product'>
-            <h2 className='title'>{title}</h2>
-            <button className='btn' onClick={showTitle}>clickMe</button>
+            <h2 className='title'>{product.title}</h2>
+            <button className='btn' onClick={() => onDelete(product.id)}>Delete</button>
         </div>
     );
 }
