@@ -1,7 +1,7 @@
+import App from "./App";
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-import App from './App';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-let root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+root.render(<App title="Book 1"/>);

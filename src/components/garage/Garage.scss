@@ -1,0 +1,10 @@
+.garage-cars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 0.5rem gray;
+    width: fit-content;
+    margin: auto;
+    padding: 1rem;
+    column-gap: 1rem;
+}
