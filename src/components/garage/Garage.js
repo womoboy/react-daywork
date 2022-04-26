@@ -1,14 +1,16 @@
+import React from 'react';
 import Car from '../car/Car';
-import './Garage.scss';
 
-const Garage = () => {
-    return (
-        <div className='garage-cars'>
-            <div><Car title="BMW"/></div>
-            <div><Car title="Volvo"/></div>
-            <div><Car title="Fiat"/></div>
-        </div>
-    )
+class Garage extends React.Component {
+    render(){
+        return (
+            <div>
+                <Car title="BMW" color="Red"/>
+                <Car title="Fiat" color="Blue" />
+                <Car title="Ford" color="Yellow" />
+            </div>
+        )
+    }
 }
 
 export default Garage;

@@ -1,11 +1,15 @@
-import './Car.scss';
+import React from 'react';
 
-const Car = (probs) => {
-    return (
-        <div className='car'>
-            <h2>the car is {probs.title}</h2>
-        </div>
-    )
+class Car extends React.Component {
+    constructor(props){
+        super();
+    }
+
+    render(){
+        return (
+            <div>this name of the car is: {this.props.title} and color is: {this.props.color}</div>
+        )
+    }
 }
 
 export default Car;

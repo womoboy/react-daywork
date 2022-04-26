@@ -1,11 +1,14 @@
-import Garage from "./components/garage/Garage";
+import React from 'react';
+import Garage from './components/garage/Garage';
 
-function App() {
-    return (
-        <div>
-            <Garage />
-        </div>
-    )
+class App extends React.Component {
+    render(){
+        return(
+            <>
+                <Garage />
+            </>
+        )
+    }
 }
 
 export default App;
