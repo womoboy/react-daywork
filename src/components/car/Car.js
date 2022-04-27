@@ -1,6 +1,9 @@
-
 const Car = (props) => {
-    return <li>i am a {props.brand} with id : {props.id}</li>
+    return (
+        <>
+            <p>my car name is : {props.brand} with id : {props.id}</p>
+        </>
+    )
 }
 
 export default Car;
