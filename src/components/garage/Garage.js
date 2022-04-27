@@ -1,10 +1,11 @@
-function Garage(props){
-    return(
+import Car from '../car/Car';
+
+const Garage = (props) => {
+    return (
         <>
-            <h2>Garage</h2>
-            {props.cars.length > 0 &&
-                <p>You have {props.cars.length} cars in the garage.</p>
-            }
+            <ul>
+                {props.cars.map((car)=>{return <Car id={car.id} key={car.id} brand={car.title}/>})}
+            </ul>
         </>
     )
 }
