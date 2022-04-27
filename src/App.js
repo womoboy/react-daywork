@@ -1,11 +1,11 @@
 import React from 'react';
-import ChangeColor from './components/changeColor/ChangeColor';
+import Garage from './components/garage/Garage';
 
 class App extends React.Component {
     render(){
         return(
             <>
-                <div><ChangeColor /></div>
+                <Garage />
             </>
         )
     }
