@@ -1,13 +1,10 @@
 const Product = (props) => {
-    const showConsole = () => {
-        console.log(`name ${props.title} and id : ${props.id}`)
-    }
 
     return(
         <>
             <li>
-                name product is : {props.title} with id : {props.id}
-                <button onClick={showConsole}>Show in the Console</button>
+                name product is : {props.title}
+                <button onClick={()=>{props.onDelete(props.id)}}>Delete this</button>
             </li>
         </>
     )

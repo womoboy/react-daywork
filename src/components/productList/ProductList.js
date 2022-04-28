@@ -4,8 +4,8 @@ const ProductList = (props) => {
   return (
     <>
       <ul>
-        {props.books.map((book) => {
-          return <Product id={book.id} key={book.id} title={book.title} />;
+        {props.products.map((product) => {
+          return <Product id={product.id} key={product.id} title={product.title} onDelete={props.onDelete}/>;
         })}
       </ul>
     </>
