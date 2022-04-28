@@ -1,16 +1,17 @@
-import Garage from './components/garage/Garage';
-
-const cars = [
-    {id: 1, title: "BMW"},
-    {id: 2, title: "Volvo"},
-    {id: 3, title: "Ford"},
-    {id: 4, title: "Fiat"}
-]
+import { useState } from 'react'
+import ProductList from './components/productList/ProductList';
 
 const App = () => {
+    const [books, setBook] = useState([
+        {id: "#1", title: "Book 1"},
+        {id: "#2", title: "Book 2"},
+        {id: '#3', title: "Book 3"},
+        {id: '#4', title: "Book 4"}
+    ]);
+
     return (
         <>
-            <Garage cars={cars}/>
+            <ProductList books={books}/>
         </>
     )
 }
