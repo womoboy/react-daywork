@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import ProductList from './components/productList/ProductList';
+import AddProduct from './components/addProduct/AddProduct';
 
 const App = () => {
     const [products, setProducts] = useState([
@@ -9,12 +10,19 @@ const App = () => {
         {id: '#4', title: "Book 4"}
     ]);
 
+    const productAdd = (title)=>{
+        const id = Math.floor(Math.random() * 1000);
+        const newProduct = {id, ...title};
+        setProducts([...products, newProduct]);
+    }
+
     const deleteProduct = (id) => {
         setProducts(products.filter((item) => item.id !== id));
     }
 
     return (
         <>
+            <AddProduct onAdd={productAdd}/>
             <ProductList products={products} onDelete={deleteProduct}/>
         </>
     )
