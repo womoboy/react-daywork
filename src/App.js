@@ -1,22 +1,13 @@
-import Counter from "./components/counter/Counter";
-import { useState } from "react";
+import Prodduct from './components/product/Product'
 
 const App = () => {
-  const [count, setCount] = useState(0);
+    const text = "Hello World !"
 
-  const addNum = async () => {
-    setCount(count + 1);
-  };
-
-  const minNum = () => {
-    setCount(count - 1);
-  };
-
-  return (
-    <>
-      <Counter count={count} minNum={minNum} addNum={addNum} />
-    </>
-  );
-};
+    return (
+        <>
+            <Prodduct text={text} />
+        </>
+    )
+}
 
 export default App;
