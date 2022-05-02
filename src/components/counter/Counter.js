@@ -1,16 +1,16 @@
-import React from 'react';
-import { useState } from 'react';
+import React from "react";
+import "./Counter.scss";
 
-const Counter = () => {
-    const [count, setCount] = useState(0);
-    
-    return (
-        <>
-            <p>this number is : {count}</p>
-            <button onClick={()=> setCount(count + 1)}>+</button>
-            <button onClick={()=> setCount(count - 1)}>-</button>
-        </>
-    )
-}
+const Counter = ({ count, minNum, addNum }) => {
+  return (
+    <>
+      <div className="container">
+        <p className="counter">this number is : {count}</p>
+        <button onClick={addNum}>+</button>
+        <button onClick={minNum}>-</button>
+      </div>
+    </>
+  );
+};
 
 export default Counter;
