@@ -21,7 +21,7 @@ class App extends React.Component {
     render() {
         return (
             <>
-                <p id='showColor'>the color is: {this.state.favoritcolor}</p>
+                <p id='showColor'>the color is: {this.state.favoritcolor} + update</p>
             </>
         )
     }
