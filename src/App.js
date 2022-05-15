@@ -1,11 +1,7 @@
-import Prodduct from './components/product/Product'
-
 const App = () => {
-    const text = "Hello World !"
-
     return (
         <>
-            <Prodduct text={text} />
+            <div>Hello World ! this is the App</div>
         </>
     )
 }
