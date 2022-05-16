@@ -1,0 +1,11 @@
+$darkBlue: rgb(49, 49, 104);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: $darkBlue;
+}
