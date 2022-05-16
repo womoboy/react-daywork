@@ -1,4 +1,5 @@
 $darkBlue: rgb(49, 49, 104);
+$white: white;
 
 * {
     padding: 0;
@@ -8,4 +9,5 @@ $darkBlue: rgb(49, 49, 104);
 
 body {
     background: $darkBlue;
+    color: $white;
 }
