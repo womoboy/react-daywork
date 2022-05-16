@@ -5,23 +5,29 @@ const Testform = () => {
 
     const [inputs, setInputs] = useState({});
 
-    const handleSubmit = (event) => {
+    const handlerChange = (event) => {
+        const name = event.target.name;
+        const val = event.target.value;
+        setInputs((values) => ({...values, [name]: val}));
+    }
+
+    const handlerSubmit = (event) => {
         event.preventDefault();
         console.log(inputs);
     }
 
-    const handlerChange = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-        setInputs((values) => ({...values, [name]: value}))
-    }
-
     return (
         <>
-            <form id='test-form' onSubmit={handleSubmit}>
-                <input type="text" placeholder="Enter first name" name="firstName" value={inputs.firstName || ''} onChange={handlerChange} />
-                <input type="text" placeholder="Enter last name" name="lastName" value={inputs.lastName || ''} onChange={handlerChange} />
-                <input type="submit" />
+            <form id="test-form" onSubmit={handlerSubmit}>
+                <input name='firstName' placeholder="Enter your first name" type="text" value={inputs.firstName || ''} onChange={handlerChange} />
+                <input name='age' placeholder= 'enter your age' type="number" value={inputs.age || ''} onChange={handlerChange} />
+                <select name='car' value={inputs.car || ''} onChange={handlerChange}>
+                    <option value='Ford'>Ford</option>
+                    <option value='Fiat'>Fiat</option>
+                    <option value='Volvo'>Volvo</option>
+                </select>
+                <textarea name='info' placeholder="enter your text" value={inputs.info || ''} onChange={handlerChange}></textarea>
+                <input type="submit" value='Submit' />
             </form>
         </>
     )
