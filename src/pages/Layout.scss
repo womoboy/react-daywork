@@ -1,0 +1,28 @@
+$white: white;
+$orange: orange;
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: inline-block;
+    width: 90px;
+}
+
+.link {
+    color: $white;
+    display: block;
+    text-decoration: none;
+    padding: 1rem;
+    text-align: center;
+}
+
+.link:hover {
+    background-color: $white;
+    color: black;
+}
+
+.link:active {
+    color: $orange;
+}
