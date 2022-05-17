@@ -4,14 +4,15 @@ const App = () => {
 
     const [color, setColor] = useState('');
 
-    const getColor = () => {
-        setColor('Red');
+    const getColor = (e) => {
+        setColor(e.target.value);
     }
 
     return (
         <>
             <p>My favorit color is : {color}</p>
-            <button onClick={ getColor } >ChnageColor</button>
+            <button value='Red' onClick={ getColor } >ChnageColor To Red</button>
+            <button value='Blue' onClick={ getColor } >ChnageColor To Blue</button>
         </>
     )
 }
