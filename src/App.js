@@ -1,31 +1,32 @@
+import Todos from './components/todos/Todos';
+import { useState } from 'react';
 
-//add router package
-import { BrowserRouter, Routes, Route} from 'react-router-dom'
-
-//add pages
-import Home from './pages/Home';
-import Blogs from './pages/Blogs';
-import Contact from './pages/Contact';
-import NoPage from './pages/NoPage';
-
-//add navigation component for router
-import Layout from './pages/Layout';
 
 const App = () => {
-    return (
+    const [count, setCount] = useState(0);
+    const [todos, setTodos] = useState(['todos1', 'todos2']);
+
+    const increment = () => {
+        setCount((e) => e + 1);
+        
+    }
+
+    const getTodos = () => {
+        setTodos((values) => [...values, 'todos3', 'todos 4'])
+    }
+
+    return(
         <>
-            <BrowserRouter>
-                <Routes>
-                    <Route path='/' element={<Layout />}>
-                        <Route index path='/' element={<Home />} />
-                        <Route path='blogs' element={<Blogs />} />
-                        <Route path='Contact' element={<Contact />} />
-                        <Route path='*' element={<NoPage />} />
-                    </Route>
-                </Routes>
-            </BrowserRouter>
+            <Todos todos={todos}/>
+            <hr />
+            <div>
+                count: {count}
+                <button onClick={increment} >+</button>
+                <button onClick={getTodos}>todos action</button>
+            </div>
+
         </>
     )
 }
 
-export default App
+export default App;
