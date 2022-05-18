@@ -1,18 +1,25 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react';
 
 const App = () => {
 
-    const [color, setColor] = useState('');
+    const [count, setCount] = useState(0);
+    const [num1 , setNum1] = useState(0)
 
-    const getColor = (e) => {
-        setColor(e.target.value);
+    useEffect(() => {
+        setTimeout(() => {
+            setCount((e) => e + 1);
+        }, 1000)
+    }, [num1])
+
+    const additionNum = () => {
+        setNum1((e)=> e + 2);
     }
 
     return (
         <>
-            <p>My favorit color is : {color}</p>
-            <button value='Red' onClick={ getColor } >ChnageColor To Red</button>
-            <button value='Blue' onClick={ getColor } >ChnageColor To Blue</button>
+            <p>this count is : { count }</p>
+            <p>this is num : { num1 } </p>
+            <button onClick={additionNum}>ClickMe</button>
         </>
     )
 }
