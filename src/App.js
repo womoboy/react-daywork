@@ -1,10 +1,17 @@
+import { useState } from 'react';
 
-import MousePosition from './components/mousPosition/MousePosition';
+import ShowInfoA from './components/showinfoA/ShowInfoA'
+import { UserContext } from './UserContext';
 
 const App = () => {
+
+    const [user, setUser] = useState('John Doe');
+
     return (
         <>
-            <MousePosition />
+            <UserContext.Provider value={{user, setUser}}>
+                <ShowInfoA />  
+            </UserContext.Provider>
         </>
     )
 }
