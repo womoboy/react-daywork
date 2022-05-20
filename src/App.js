@@ -1,4 +1,4 @@
-import React, { useState, createContext, useMemo } from "react";
+import React, { createContext, useState, useMemo } from "react";
 
 //import router
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -15,18 +15,13 @@ import NoPage from "./pages/NoPage";
 export const UserContext = createContext();
 
 const App = () => {
-  //track user in useState
-  const [user, setUser] = useState({
-      firstName: 'John',
-      lastName: 'Doe'
-  });
+  const [user, setUser] = useState(null);
 
-  //memo
-  const providerValue = useMemo(() => ({user, setUser}), [user, setUser])
+  const value = useMemo(() => ({user, setUser}), [user, setUser]);
 
   return (
     <>
-      <UserContext.Provider value={ providerValue }>
+      <UserContext.Provider value={ value }>
         <Router>
           <Routes>
             <Route path="/" element={<Layout />}>
