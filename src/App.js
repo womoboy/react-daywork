@@ -1,20 +1,18 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 
 const App = () => {
+    const inputElement = useRef();
 
-    const [input, setInput] = useState('');
-    const count = useRef(0);
-
-    useEffect(() => {
-        count.current += 1;
-    });
+    const getFocus = () => {
+        inputElement.current.focus();
+    }
 
     return (
         <>
-            <input type="text" value={input} onChange={(e) => setInput(e.target.value)} />
-            <p>The count is : {count.current} </p>
+            <input type="text" ref={inputElement} />
+            <button onClick={getFocus} >GetFocus</button>
         </>
     )
 }
 
-export default App;
+export default App
