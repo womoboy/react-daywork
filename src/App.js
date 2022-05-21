@@ -1,23 +1,20 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 
 const App = () => {
+    const [inputValue, setInputValue] = useState('');
+    const prevValue = useRef('');
 
-    const intervalRef = useRef();
-
-    useEffect(() => {
-        const id = setInterval(() => {
-            console.log('a secound has passed');
-        }, 1000);
-        intervalRef.current = id;
-
-        return () => clearInterval(intervalRef.current);
-    })
-
-    const handleCancel = () => clearInterval(intervalRef.current);
+    const handlerSave = () => {
+        prevValue.current = inputValue
+    }
 
     return (
         <>
-            <button onClick={handleCancel}>Cancel</button>
+            <p>this is the app</p>
+            <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+            <button onClick={handlerSave} >SaveValue</button>
+            <p>the prevValue value is : {prevValue.current} </p>
+            <p>the current value is : {inputValue} </p>
         </>
     )
 }
