@@ -1,18 +1,21 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 const App = () => {
-    const inputElement = useRef();
+    const [inputValue, setInputValue] = useState('');
 
-    const getFocus = () => {
-        inputElement.current.focus();
-    }
+    const count = useRef(0);
+
+    useEffect(() => {
+        count.current += 1;
+    })
 
     return (
         <>
-            <input type="text" ref={inputElement} />
-            <button onClick={getFocus} >GetFocus</button>
+            <h2>this is the app</h2>
+            <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+            <p>count of re-render : {count.current} </p>
         </>
     )
 }
 
-export default App
+export default App;
