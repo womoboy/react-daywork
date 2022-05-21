@@ -1,19 +1,23 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 const App = () => {
-    const [inputValue, setInputValue] = useState('');
 
-    const count = useRef(0);
+    const intervalRef = useRef();
 
     useEffect(() => {
-        count.current += 1;
+        const id = setInterval(() => {
+            console.log('a secound has passed');
+        }, 1000);
+        intervalRef.current = id;
+
+        return () => clearInterval(intervalRef.current);
     })
+
+    const handleCancel = () => clearInterval(intervalRef.current);
 
     return (
         <>
-            <h2>this is the app</h2>
-            <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
-            <p>count of re-render : {count.current} </p>
+            <button onClick={handleCancel}>Cancel</button>
         </>
     )
 }
