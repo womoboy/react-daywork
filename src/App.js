@@ -1,20 +1,27 @@
-import React, { useState, useRef } from 'react';
+import React, { useReducer } from 'react';
+
+const initialState = {count: 0};
+
+const reducer = (state, action) => {
+    switch (action.type) {
+        case 'increment':
+            return {count: state.count + 1}
+        case 'decrement':
+            return {count: state.count - 1}
+        default:
+            throw new Error()
+    }
+}
 
 const App = () => {
-    const [inputValue, setInputValue] = useState('');
-    const prevValue = useRef('');
 
-    const handlerSave = () => {
-        prevValue.current = inputValue
-    }
+    const [state, dispatch] = useReducer(reducer, initialState);
 
     return (
         <>
-            <p>this is the app</p>
-            <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
-            <button onClick={handlerSave} >SaveValue</button>
-            <p>the prevValue value is : {prevValue.current} </p>
-            <p>the current value is : {inputValue} </p>
+            Count : {state.count}
+            <button onClick={() => dispatch({type: 'decrement'})}>-</button>
+            <button onClick={() => dispatch({type: 'increment'})}>+</button>
         </>
     )
 }
