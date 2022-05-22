@@ -9,18 +9,17 @@ const reducer = (state, action) => {
         case 'decrement':
             return {count: state.count - 1}
         default:
-            throw new Error()
+            throw new Error();
     }
 }
 
 const App = () => {
-
     const [state, dispatch] = useReducer(reducer, initialState);
 
     return (
         <>
-            Count : {state.count}
-            <button onClick={() => dispatch({type: 'decrement'})}>-</button>
+            Count: {state.count}
+            <button onClick={() => dispatch({type: 'decrement'})} >-</button>
             <button onClick={() => dispatch({type: 'increment'})}>+</button>
         </>
     )
