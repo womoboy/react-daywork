@@ -1,26 +1,20 @@
-import React, { useReducer } from 'react';
-
-const initialState = {count: 0};
-
-const reducer = (state, action) => {
-    switch (action.type) {
-        case 'increment':
-            return {count: state.count + 1}
-        case 'decrement':
-            return {count: state.count - 1}
-        default:
-            throw new Error();
-    }
-}
+import React, { useState } from 'react'
 
 const App = () => {
-    const [state, dispatch] = useReducer(reducer, initialState);
+
+    const [value, setValue] = useState({});
+
+    const handlerjson = async () => {
+        const res = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+        const data = await res.json();
+        setValue(data);
+    }
 
     return (
         <>
-            Count: {state.count}
-            <button onClick={() => dispatch({type: 'decrement'})} >-</button>
-            <button onClick={() => dispatch({type: 'increment'})}>+</button>
+            <pre>{JSON.stringify(value)}</pre>
+            <pre>{value.id + '/' + value.title + '/' + value.completed}</pre>
+            <button onClick={handlerjson}>GetResponse</button>
         </>
     )
 }
