@@ -2,18 +2,21 @@ import React, { useState } from 'react'
 
 const App = () => {
 
-    const [value, setValue] = useState({});
+    const [value, setValue] = useState([]);
 
     const handlerjson = async () => {
-        const res = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+        const res = await fetch('https://jsonplaceholder.typicode.com/todos');
         const data = await res.json();
         setValue(data);
     }
 
     return (
         <>
-            <pre>{JSON.stringify(value)}</pre>
-            <pre>{value.id + '/' + value.title + '/' + value.completed}</pre>
+            {value &&
+                value.map((item) => {
+                    return <p key={item.id}> {item.title + ' ' + item.id}</p>
+                })
+            }
             <button onClick={handlerjson}>GetResponse</button>
         </>
     )
