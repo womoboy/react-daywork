@@ -1,0 +1,34 @@
+@import "../../generalStyle/colors.scss";
+
+.navbar {
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    border-bottom: 1px solid $gray;
+}
+
+.navbar h2 {
+    color: $red;
+    padding: 1rem 0;
+}
+
+.navbar .links {
+    margin-left: auto;
+}
+
+.navbar a {
+    text-decoration: none;
+    padding: 0 1rem;
+    padding: 1rem;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    background-color: $red;
+    color: white;
+}
+
+.navbar a:active {
+    background-color: green;
+}

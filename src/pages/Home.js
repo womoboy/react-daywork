@@ -1,4 +1,3 @@
-import Navbar from "../components/navbar/Navbar";
 import Bloglist from "../components/bloglist/Bloglist";
 import { useState, useEffect } from 'react';
 
@@ -7,16 +6,20 @@ const Home = () => {
 
     useEffect(() => {
         fetch('http://localhost:8000/blogs')
-            .then((res) => console.log(res));
-    });
+            .then((res) => {
+                return res.json();
+            })
+            .then((data) => {
+                setBlogs(data);
+            })
+            .catch((error) => {
+                console.log(error.message);
+            })
+    }, []);
 
     return (
         <div className="home">
-            <Navbar />
-            <div className="bloglist">
-                <h2>All blogs</h2>
-                <Bloglist />
-            </div>
+            {blogs && <Bloglist blogs={ blogs } title="All Blogs" />}   
         </div>
     )
 }

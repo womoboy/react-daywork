@@ -1,0 +1,22 @@
+@import "../../generalStyle/colors.scss";
+
+.blog-list > h2 {
+    font-size: 1.3rem;
+    padding: 1rem 0;
+}
+
+.blog {
+    margin: 1rem 0;
+}
+
+.blog > h2 {
+    color: $red;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0 1rem;
+}
+
+.blog > p {
+    font-size: 16px;
+    padding: 0 1rem;
+}
