@@ -3,32 +3,29 @@ import { useState, useEffect } from 'react';
 const useFetch = (url) => {
   const [ response, setResponse ] = useState(null);
   const [ error, setError ] = useState(null);
-  const [ isPending, setIsPending ] = useState(true);
+  const [ isPending, setIsPending ] = useState(false);
 
   useEffect(() => {
-    const abortController = new AbortController;
-    
-    fetch(url, { signal: abortController.signal })
-      .then((res) => {
+    const doFetch = async () => {
+      try {
+        const res = await fetch(url);
+        setIsPending(true);
+
         if(!res.ok) {
-          throw new Error('Sorry we can\'t find data !');
-        } else {
-          return res.json();
-        }
-      })
-      .then((data) => {
-        setIsPending(false);
-        setResponse(data);
-      })
-      .catch((err) => {
-        if(err.name === 'AbortError') {
-          console.log('Fetching aborted !');
-        } else {
           setIsPending(false);
-          setError(err.message);
+          throw Error('Sorry, we can\t find the data !');
+        } else {
+          const data = await res.json();
+          setIsPending(false);
+          setResponse(data);
         }
-      })
-      return () => abortController.abort();
+        
+      }
+      catch (err) {
+        setError(err.message);
+      }
+    }
+    doFetch();
   }, [url]);
 
   return { response, error, isPending };

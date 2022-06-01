@@ -7,16 +7,25 @@
 
 .blog {
     margin: 1rem 0;
+    padding: 0.5rem;
 }
 
-.blog > h2 {
+.blog:hover {
+    box-shadow: 1px 3px 5px $gray;
+}
+
+.blog h2 {
     color: $red;
     font-size: 20px;
     font-weight: 500;
     padding: 0 1rem;
 }
 
-.blog > p {
+.blog p {
     font-size: 16px;
     padding: 0 1rem;
+}
+
+.blog a {
+    text-decoration: none;
 }
