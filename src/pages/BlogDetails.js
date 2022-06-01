@@ -9,7 +9,9 @@ const BlogDetails = () => {
 
   const handleClick = () => {
       fetch(url, { method: 'DELETE'});
-      navigate('/');
+      setTimeout(() => {
+        navigate('/');
+      }, 100);
   }
 
   return (

@@ -1,0 +1,29 @@
+@import '../generalStyle/colors.scss';
+
+.create {
+    margin: auto;
+    align-items: center;
+}
+
+.create form {
+    padding: 2rem;
+    margin: auto;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.create form label {
+    margin-top: 1rem;
+}
+
+.create form button {
+    margin-top: 1rem;
+    padding: 0.5rem;
+
+}
+
+.create input, .create textarea, .create select {
+    padding: 0.5rem 1rem;
+    color: $darkgray;
+}
