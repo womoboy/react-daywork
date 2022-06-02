@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Create.scss';
 
 const Create = () => {
     const [ data, setData ] = useState({});
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -11,6 +13,9 @@ const Create = () => {
             headers: { "Content-Type":"application/json" },
             body: JSON.stringify(data)
         });
+        setTimeout(() => {
+            navigate('/');
+        }, 300)
     }
 
     const handleChange = (e) => {
@@ -19,6 +24,10 @@ const Create = () => {
         
         setData(values => ({...values, [name]: value}));
     }
+
+    useEffect(() => {
+        setData(values => ({...values, author: 'aria'}))
+    }, []);
 
     return (
         <div className="create">

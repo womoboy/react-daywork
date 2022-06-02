@@ -1,0 +1,42 @@
+@import '../generalStyle/colors.scss';
+
+.blog-details {
+    padding: 0.4rem;
+}
+
+.blog-details .content {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-details .content h2 {
+    color: $darkgray;
+    font-size: 20px;
+    padding: 0.3rem 0;
+    color: $red;
+    font-weight: 300;
+}
+
+.blog-details .content p {
+    font-size: 14px;
+    color: $darkgray;
+}
+
+.blog-details .content div {
+    padding: 1rem;
+    font-weight: 300;
+    color: $hallogray;
+}
+
+.blog-details .content button {
+    border: none;
+    outline: none;
+    background: $red;
+    color: $white;
+    padding: 0.4rem;
+    margin-left: auto;
+}
+
+.blog-details .content button:hover {
+    background-color: $lightred;
+}

@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import useFetch from "../customHooks/useFetch";
+import './BlogDetails.scss';
 
 const BlogDetails = () => {
   const { id } = useParams();
@@ -11,7 +12,7 @@ const BlogDetails = () => {
       fetch(url, { method: 'DELETE'});
       setTimeout(() => {
         navigate('/');
-      }, 100);
+      }, 1000);
   }
 
   return (
@@ -22,7 +23,7 @@ const BlogDetails = () => {
         <div className="content">
           <h2>{blog.title}</h2>
           <p>Written by: {blog.author}</p>
-          <p>{blog.body}</p>
+          <div>{blog.body}</div>
           <button onClick={ handleClick }>delete</button>
         </div>
       )}
