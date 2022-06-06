@@ -1,9 +1,11 @@
-import Main from './components/main/Main'
+import Titles from './components/title/Titles';
 
 const App = () => {
     return (
         <div className="app">
-            <Main />
+            <div className="main">
+                 <Titles />
+            </div>
         </div>
     )
 }
